@@ -6,6 +6,8 @@ from constants import *
 
 def main():
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     while True:
         for event in pygame.event.get():
@@ -14,5 +16,7 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
+        clock.tick(60)
+        dt = clock.get_time() / 1000.0  # Convert milliseconds to seconds
 if __name__ == "__main__":
     main()
