@@ -46,8 +46,9 @@ def main():
                 sys.exit()
             for shot in shots:
                 if asteroid.collisions(shot):
-                    asteroid.kill()
                     shot.kill()
+                    asteroid.split()
+                    
 
         # limit the framerate to 60 FPS
         dt = clock.tick(60) / 1000
